@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-To see the deployed project [Click here]([https://646b523e7b734626978c2806--aesthetic-alfajores-e8e828.netlify.app/]).
+To see the deployed project [Click here](https://646b523e7b734626978c2806--aesthetic-alfajores-e8e828.netlify.app/).
 
 # Getting Started with Create React App
 

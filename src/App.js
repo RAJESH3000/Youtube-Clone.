@@ -1,26 +1,28 @@
-import NavComponent from "./components/Drawer";
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Main from './pages/main'
+import Home from './pages/Home'
 function App() {
-  const api = "https://internship-service.onrender.com/videos?page=0";
   const [data,setData] = useState([])
+  const [page,setPage] = useState(0)
+  const [loading,setLoading] = useState(true)
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get(api);
+        setLoading(true)
+        const response = await axios.get(`https://internship-service.onrender.com/videos?page=${page}`);
         setData(response.data.data.posts);
+        setLoading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
     fetchData();
-  },[])
+  },[page])
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Main/>}/>
+      <Route path='/' element={<Home data={data} page={page} setPage={setPage} loading={loading}/>}/>
     </Routes>
     </BrowserRouter>
   );

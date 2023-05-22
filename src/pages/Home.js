@@ -34,7 +34,8 @@ const Home = ({data,page,setPage,loading}) => {
           {data.map((post, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
                 <Card sx={{ maxWidth: '65vw' }}>
-                    <Link><CardMedia
+                    <Link to={`/video/${post.postId}`}>
+                    <CardMedia
                       sx={{ height: 500 ,objectFit: 'cover'}}
                       image={post.submission.thumbnail}
                       title="green iguana"

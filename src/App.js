@@ -2,6 +2,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Home from './pages/Home'
+import Video from './pages/video'
 function App() {
   const [data,setData] = useState([])
   const [page,setPage] = useState(0)
@@ -23,6 +24,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home data={data} page={page} setPage={setPage} loading={loading}/>}/>
+      <Route path='/video/:id' element={<Video data={data}/>}/>
     </Routes>
     </BrowserRouter>
   );

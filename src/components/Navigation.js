@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-
+import { Link } from 'react-router-dom';
 export default function NevigationBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -24,9 +24,10 @@ export default function NevigationBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to={'/'} style={{textDecoration: 'none',color:'white'}}>
             Youtube
+          </Link>
           </Typography>
-        
             <div>
               <IconButton
                 size="large"
@@ -57,7 +58,6 @@ export default function NevigationBar() {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
-
         </Toolbar>
       </AppBar>
     </Box>
